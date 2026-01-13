@@ -32,7 +32,8 @@ body {
     position: fixed;
     bottom: -100px;
     left: 50%;
-    width: 200%;
+    width: 200vw;
+    /* Use vw to avoid rigid pixel overflow */
     height: 60vh;
     background-image:
         linear-gradient(rgba(0, 255, 255, 0.2) 1px, transparent 1px),
@@ -165,6 +166,9 @@ h3 {
     pointer-events: none;
     z-index: 0;
     opacity: 0.6;
+    max-width: 100vw;
+    /* Prevent squiggles from causing overflow */
+    overflow: hidden;
 }
 
 /* CTA */
@@ -304,6 +308,7 @@ h3 {
     }
 
     .timeline-content {
-        width: 100% !important;
+        width: calc(100% - 40px) !important;
+        /* Ensure it stays within viewport */
     }
 }
