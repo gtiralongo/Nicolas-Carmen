@@ -251,28 +251,35 @@ h3 {
 }
 
 @media (max-width: 768px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+
     .hero {
         flex-direction: column;
         height: auto;
-        padding: 8rem 0 4rem;
+        padding: 6rem 0 3rem;
         text-align: center;
     }
 
     .hero h1 {
-        font-size: 3.5rem;
+        font-size: 3.2rem;
+        margin-bottom: 1.5rem;
     }
 
     .hero-content {
         width: 100%;
-        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .hero-img {
         display: block;
         position: relative;
-        width: 90%;
-        max-width: 400px;
-        margin: 3rem auto 0;
+        width: 85%;
+        max-width: 350px;
+        margin: 2rem auto 0;
         right: auto;
         top: auto;
         transform: none;
@@ -287,28 +294,83 @@ h3 {
         }
 
         50% {
-            transform: translateY(-20px);
+            transform: translateY(-15px);
         }
     }
 
+    .section-title {
+        font-size: 2.2rem;
+        margin-bottom: 3rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 400px;
+        padding: 2rem;
+        margin: 0 auto;
+    }
+
+    /* Fix About section centering */
+    #about div {
+        border-left: none !important;
+        border-top: 5px solid var(--neon-pink);
+        padding: 2rem 0 0 0 !important;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    #about h2 {
+        font-size: 2.5rem !important;
+    }
+
+    /* Timeline Mobile Fix - Centering cards */
     .experience-timeline::before {
-        left: 20px;
+        display: none;
+        /* Hide the vertical line on mobile to simplify layout */
+    }
+
+    .timeline-item {
+        padding-left: 0;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
     .timeline-date {
         position: relative;
-        left: 40px;
-        text-align: left;
-        margin-bottom: 1rem;
+        left: auto;
+        top: auto;
         transform: none;
-    }
-
-    .timeline-item {
-        padding-left: 20px;
+        margin-bottom: 1.5rem;
+        display: inline-block;
     }
 
     .timeline-content {
-        width: calc(100% - 40px) !important;
-        /* Ensure it stays within viewport */
+        width: 100% !important;
+        max-width: 450px;
+        margin: 0 auto !important;
+    }
+
+    .timeline-item:nth-child(even) .timeline-content {
+        margin-right: auto;
+    }
+
+    .cta-box {
+        padding: 4rem 1rem;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+        padding: 1.2rem;
     }
 }
